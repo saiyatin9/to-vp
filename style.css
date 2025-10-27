@@ -1,0 +1,135 @@
+/* Google Fonts in every page head; this is purely shared styles */
+:root{
+  --blue:#0072CE;
+  --blue-dark:#0057b7;
+  --lavender:#d8e3ff;
+  --ink:#1a1a1a;
+  --bg:linear-gradient(180deg, var(--lavender), #ffffff);
+  --radius:20px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.7;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+}
+
+.container{
+  width:min(1100px,92%);
+  margin:0 auto;
+  padding:32px 0 64px;
+  animation:fadeIn .6s ease;
+}
+
+.header{
+  background:linear-gradient(135deg, var(--blue), #64b5f6);
+  color:#fff;
+  padding:56px 0;
+  box-shadow:var(--shadow);
+  border-bottom-left-radius:36px;
+  border-bottom-right-radius:36px;
+}
+.header .inner{
+  width:min(1100px,92%);
+  margin:0 auto;
+}
+.title{
+  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+  font-size:clamp(28px,3.4vw,44px);
+  letter-spacing:.2px;
+}
+.subtitle{
+  opacity:.9;margin-top:8px;font-size:clamp(14px,1.9vw,18px)
+}
+
+.nav{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:18px
+}
+.nav a{
+  text-decoration:none;
+  background:#ffffff1a;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:14px;
+  transition:.2s transform ease, .2s background ease, .2s opacity ease;
+  backdrop-filter: blur(3px);
+  border:1px solid #ffffff2e;
+}
+.nav a:hover{transform:translateY(-2px);background:#ffffff2e}
+.nav a.active{background:#fff;color:var(--blue);font-weight:600}
+
+.section-card{
+  background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:28px; margin-top:28px;
+}
+
+h2{
+  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+  color:var(--blue-dark);
+  font-size:clamp(24px,2.6vw,32px);
+  margin-bottom:10px;
+}
+p{font-size:clamp(15px,2vw,18px);margin:10px 0}
+
+.buttons{
+  display:flex; gap:12px; flex-wrap:wrap; margin-top:22px
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 18px;border-radius:12px;border:1px solid #d9e2ff;
+  background:#fff;color:var(--blue-dark);text-decoration:none;font-weight:600;
+  box-shadow:var(--shadow);transition:.2s transform ease, .2s box-shadow ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--blue);color:#fff;border-color:transparent}
+.btn.ghost{background:#f6f9ff}
+.btn.block{width:100%}
+
+.grid{
+  display:grid;gap:16px;
+}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:880px){.grid.cols-3{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+.card{
+  background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;
+  transition:.2s transform ease;
+}
+.card:hover{transform:translateY(-3px)}
+.emoji{font-size:34px;margin-bottom:8px}
+
+.gallery{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px
+}
+.gallery img{
+  width:180px;height:180px;object-fit:cover;border-radius:18px;box-shadow:var(--shadow);
+  transition:transform .25s ease;
+}
+.gallery img:hover{transform:scale(1.04)}
+
+.list{list-style:none;margin-top:8px}
+.list li{padding:10px 0 10px 8px;border-bottom:1px dashed #e6ecff;font-size:17px}
+.list li:last-child{border-bottom:none}
+
+footer{margin-top:auto;padding:30px 0;text-align:center;font-size:14px;opacity:.7}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(14px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+/* prev/next bar */
+.pager{
+  margin-top:26px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap
+}
+.small{font-size:13px;opacity:.8}
